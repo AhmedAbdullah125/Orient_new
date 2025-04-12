@@ -11,56 +11,56 @@ import { API_BASE_URL } from '@/lib/apiConfig';
 
 export default function Footer() { // Defining the main functional component named 'Footer'.
 
-    const [loading, setLoading] = useState(true); // State for loading indicator
-    const [data, setData] = useState(null);
-    const [contactData, setContactData] = useState(null);
-    const [error, setError] = useState(null);
-    const lang = 'en';
-    useEffect(() => {
-        setLoading(true);
-        const headers = {
-            lang: 'ar', // Change language dynamically based on state
-        };
-        // Fetch data from the API with Axios
-        axios.get(`${API_BASE_URL}/social_media`, {
-            headers: headers,
-        }).then(response => {
-            setData(response.data.data);  // Set the response data to state
-            setLoading(false);  // Set loading to false
+    const [loading, setLoading] = useState(false); // State for loading indicator
+    // const [data, setData] = useState(null);
+    // const [contactData, setContactData] = useState(null);
+    // const [error, setError] = useState(null);
+    // const lang = 'en';
+    // useEffect(() => {
+    //     setLoading(true);
+    //     const headers = {
+    //         lang: 'ar', // Change language dynamically based on state
+    //     };
+    //     // Fetch data from the API with Axios
+    //     axios.get(`${API_BASE_URL}/social_media`, {
+    //         headers: headers,
+    //     }).then(response => {
+    //         setData(response.data.data);  // Set the response data to state
+    //         setLoading(false);  // Set loading to false
 
-        })
-            .catch(error => {
-                setError(error);  // Handle any errors
-                console.error('Error fetching data:', error);
-                setLoading(false)
-            });
-        axios.get(`${API_BASE_URL}/contacts`, {
-            headers: headers,
-        }).then(response => {
-            setContactData(response.data.data);  // Set the response data to state
-            setLoading(false);  // Set loading to false
-        })
-            .catch(error => {
-                setError(error);  // Handle any errors
-                console.error('Error fetching data:', error);
-                setLoading(false)
-            });
-    }, []);  // Run this effect whenever the `language` changes
-    const [whatsapp, setWhatsapp] = useState("");
+    //     })
+    //         .catch(error => {
+    //             setError(error);  // Handle any errors
+    //             console.error('Error fetching data:', error);
+    //             setLoading(false)
+    //         });
+    //     axios.get(`${API_BASE_URL}/contacts`, {
+    //         headers: headers,
+    //     }).then(response => {
+    //         setContactData(response.data.data);  // Set the response data to state
+    //         setLoading(false);  // Set loading to false
+    //     })
+    //         .catch(error => {
+    //             setError(error);  // Handle any errors
+    //             console.error('Error fetching data:', error);
+    //             setLoading(false)
+    //         });
+    // }, []);  // Run this effect whenever the `language` changes
+    // const [whatsapp, setWhatsapp] = useState("");
 
-    useEffect(() => {
-        if (contactData?.length) {
-            const mobileNumber = contactData.find((item) => item.type === "mobile")?.value;
-            if (mobileNumber) {
-                setWhatsapp(mobileNumber);
-            }
-        }
-    }, [contactData]); // Runs when `contactData` updates
+    // useEffect(() => {
+    //     if (contactData?.length) {
+    //         const mobileNumber = contactData.find((item) => item.type === "mobile")?.value;
+    //         if (mobileNumber) {
+    //             setWhatsapp(mobileNumber);
+    //         }
+    //     }
+    // }, [contactData]); // Runs when `contactData` updates
 
     return (
         <footer id='footer'> {/* Main footer container with padding and background color */}
 
-            <Link href={`https://wa.me/${whatsapp}?text=Good%20Morning%20Alalaa`} target="_blank" className="fixed-what">
+            <Link href={`https://wa.me/+9664533445?text=Good%20Morning%20Alalaa`} target="_blank" className="fixed-what">
                 <i className="fa-brands fa-whatsapp"></i>
             </Link>
             <div className="container m-auto" id='footer'>
