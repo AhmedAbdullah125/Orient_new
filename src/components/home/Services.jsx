@@ -1,0 +1,90 @@
+'use client'
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import img1 from '/public/images/detservices/2.jpg'
+import img2 from '/public/images/hotels/1.jpg'
+import img3 from '/public/images/detservices/14.jpg'
+import img4 from '/public/images/detservices/24.jpg'
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import Link from 'next/link';
+import img from '/public/alalaa.jpg'
+export default function About() {
+    const data = [
+        { id: 1, cover: img1, title: 'Umrah services', description: 'our company did more then 1000000 Umrah tranvel to makkah and madina using our company' },
+        { id: 2, cover: img2, title: 'Hotel Reservation', description: 'our company did more then 1000000 Umrah tranvel to makkah and madina using our company' },
+        { id: 3, cover: img3, title: 'Car Reservation', description: 'our company did more then 1000000 Umrah tranvel to makkah and madina using our company' },
+        { id: 4, cover: img4, title: 'Plane Tickets', description: 'our company did more then 1000000 Umrah tranvel to makkah and madina using our company' },
+    ]
+    return (
+        <div className="about" >
+            <div className="container m-auto" id='services'>
+                <h2>Our Services</h2>
+                <h3>We offer a wide range of services to meet your needs</h3>
+                <div className="services-conr">
+
+                    <Swiper
+                        slidesPerView={3}
+                        spaceBetween={32}
+                        autoplay={true}
+                        loop={true}
+                        modules={[Autoplay, Navigation, Pagination]}
+                        breakpoints={{
+                            1400: {
+                                slidesPerView: 3,
+                            },
+                            1100: {
+                                slidesPerView: 3,
+                            },
+                            767: {
+                                slidesPerView: 2.5,
+                            },
+                            640: {
+                                slidesPerView: 1.5,
+                                autoplay: false,
+                                spaceBetween: 16
+                            },
+                            100: {
+                                slidesPerView: 1,
+                                autoplay: false,
+                                spaceBetween: 16
+                            }
+                        }}
+                        className="option"
+                    >
+
+                        {data.map((item, index) =>
+                            <SwiperSlide key={index}>
+                                <motion.div
+                                    initial={{ y: 100, opacity: 0, }}
+                                    whileInView={{ y: 0, opacity: 1, }}
+                                    transition={{
+                                        type: 'spring',
+                                        bounce: 0.5,
+                                        duration: index * .5,
+                                    }}
+                                    viewport={{ once: true }}
+                                    className="option" key={index}
+                                >
+                                    <div className="img-cont">
+                                        <Image src={item.cover} width={200} height={200} alt="Mazar"></Image>
+                                    </div>
+                                    <div className="text">
+                                        <h2>{item.title}</h2>
+                                        <p>{item.description}</p>
+                                        <Link href={`/service?id=${item.id}`} className="btn"><span>Read More </span> <i className="fa-solid fa-chevron-right"></i></Link>
+                                    </div>
+                                </motion.div>
+                            </SwiperSlide>
+                        )}
+                    </Swiper>
+
+                </div>
+            </div>
+        </div>
+    )
+}
