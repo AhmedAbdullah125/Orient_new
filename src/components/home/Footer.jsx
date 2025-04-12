@@ -12,10 +12,11 @@ import { API_BASE_URL } from '@/lib/apiConfig';
 export default function Footer() { // Defining the main functional component named 'Footer'.
 
     const [loading, setLoading] = useState(false); // State for loading indicator
+
     // const [data, setData] = useState(null);
     // const [contactData, setContactData] = useState(null);
     // const [error, setError] = useState(null);
-    // const lang = 'en';
+    const lang = 'en';
     // useEffect(() => {
     //     setLoading(true);
     //     const headers = {

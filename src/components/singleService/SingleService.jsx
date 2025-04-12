@@ -23,12 +23,17 @@ import img16 from "/public/images/detservices/16.jpg"
 import img17 from "/public/images/detservices/17.jpg"
 import img18 from "/public/images/detservices/18.jpg"
 import img19 from "/public/images/detservices/19.jpg"
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import Link from 'next/link';
 
 
 export default function SingleService() {
     // const searchParams = useSearchParams()
     // const pathId = searchParams.get('id')
-
+    const language = 'en';
     const [loading, setLoading] = useState(false); // State for loading indicator
     // const [data, setData] = useState(null);
     // const [error, setError] = useState(null);
@@ -55,6 +60,10 @@ export default function SingleService() {
     Fancybox.bind("[data-fancybox]", {
         // Your custom options
     });
+    //scroll to top
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
     const data = {
         id: 1,
         name :"Umrah Travel",
@@ -69,6 +78,29 @@ export default function SingleService() {
             img1, img3, img4, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19
         ]
     }  
+    const packages = [
+        {
+            title: 'Silver Ummrah Package',
+            oldPrice: '$ 500',
+            newPrice: '$ 450',
+            offer: '10% Off',
+            details: 'Includes 3-star hotel, flight, and transport.'
+        },
+        {
+            title: 'Gold Ummrah Package',
+            oldPrice: '$ 680',
+            newPrice: '$ 620',
+            offer: 'Limited Offer',
+            details: 'Includes 4-star hotel, guided tours, meals, and flights.'
+        },
+        {
+            title: 'Platinum Ummrah Package',
+            oldPrice: '$ 950',
+            newPrice: '$ 850',
+            offer: 'Best Value',
+            details: '5-star hotel, private transport, full board meals & flight.'
+        },
+    ]
 
     return (
         <div className="SingleService" >
@@ -96,8 +128,47 @@ export default function SingleService() {
                                 {/* <Image src={img2} alt="Alalaa" width={200} height={200} /> */}
                             </div>
                         </div>
+                        <div className="packages">
+                        <Swiper
+                            modules={[Pagination, Autoplay]}
+                            spaceBetween={20}
+                            slidesPerView={3}
+                            pagination={{ clickable: true }}
+                            autoplay={{ delay: 3000 }}
+                            className='swiperPackages'
+                            breakpoints={{
+                                0: {
+                                    slidesPerView: 1,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                },
+                                1024: {
+                                    slidesPerView: 3,
+                                },
+                            }}
+                        >
+                            {packages.map((pkg, index) => (
+                                <SwiperSlide key={index}>
+                                    <Link href="contact?service=Ummrah" className="package-card">
+                                        <h4>{pkg.title}</h4>
+                                        <div className="price-section">
+                                            <p className="new-price" style={{ fontWeight: 'bold', color: '#2e8b57' }}>
+                                                {pkg.newPrice}
+                                            </p>
+                                            <p className="old-price" style={{ textDecoration: 'line-through', color: '#999' }}>
+                                                {pkg.oldPrice}
+                                            </p>
+                                        </div>
+                                        <span className="offer">{pkg.offer}</span>
+                                        <p className="details">{pkg.details}</p>
+                                    </Link>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
                         <div className="gallery">
-                            <h3>معرض الصور</h3>
+                            <h3>Gallery</h3>
                             <div className="columns-2 gap-4 sm:columns-5">
                                 {
                                     data.images.map((img, idx) =>
