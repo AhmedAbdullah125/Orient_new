@@ -119,11 +119,11 @@ export default function FormPage({ lang }) {
                             className='w-full'
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>{lang === "en" ? "Full Name" : "الاسم بالكامل"}</FormLabel>
+                                    <FormLabel>{lang === "en" ? "Full Name" : "አባድ"}</FormLabel>
                                     <FormControl>
                                         <Input
                                             type="text"
-                                            placeholder={lang === "en" ? "Mohamed Maher" : "محمد ماهر"}
+                                            placeholder={lang === "en" ? "Mohamed Maher" : "ኢትዮን አሳደ"}
                                             {...field}
                                         />
                                     </FormControl>
@@ -147,7 +147,7 @@ export default function FormPage({ lang }) {
                             name="email" // Field for phone number
                             render={({ field }) => (
                                 <FormItem className={`w-full `}>
-                                    <FormLabel className=''>{lang === "en" ? "Email" : "البريد الالكتروني"}</FormLabel> {/* Label for phone number */}
+                                    <FormLabel className=''>{lang === "en" ? "Email" : "ኢትዮ"}</FormLabel> {/* Label for phone number */}
                                     <FormControl className=''>
                                         <Input
                                             type="email"
@@ -175,7 +175,7 @@ export default function FormPage({ lang }) {
                             name="phone" // Field for phone number
                             render={({ field }) => (
                                 <FormItem className={`w-full `}>
-                                    <FormLabel className=''>{lang === "en" ? "Phone Number" : "رقم الهاتف"}</FormLabel> {/* Label for phone number */}
+                                    <FormLabel className=''>{lang === "en" ? "Phone Number" : "ቦታ"}</FormLabel> {/* Label for phone number */}
                                     <FormControl className=''>
                                         <PhoneInput placeholder="+965 00000000" defaultCountry="SA"
                                             className="phoneInput-cont" {...field} />
@@ -200,11 +200,11 @@ export default function FormPage({ lang }) {
                             className='w-full'
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>{lang === "en" ? "Company Name" : "اسم الشركة"}</FormLabel>
+                                    <FormLabel>{lang === "en" ? "Company Name" : "አበባ"}</FormLabel>
                                     <FormControl>
                                         <Input
                                             type="text"
-                                            placeholder={lang === "en" ? "Almaher" : "الماهر"}
+                                            placeholder={lang === "en" ? "Almaher" : "ኢትዮ"}
                                             {...field}
                                         />
                                     </FormControl>
@@ -233,7 +233,7 @@ export default function FormPage({ lang }) {
                                         <Textarea
                                             type="textarea"
                                             {...field}
-                                            placeholder={lang === "en" ? "Tell us more about your company and the type of service" : "اخبرنا اكثر عن شركتك ونوع الخدمه "}
+                                            placeholder={lang === "en" ? "Tell us more about your company and the type of service" : "እባይንንድን እንደምንችል እንደምንችል እንደምንችል"}
                                             className=""
                                         />
                                     </FormControl>
@@ -242,7 +242,7 @@ export default function FormPage({ lang }) {
                             )}
                         />
                     </motion.div>
-                    <Button disabled={loading} type="submit" className={`${loading ? 'opacity-50' : ''} text-xl py-4 rounded-xl min-w-32 h-13 submit `}>{lang === "en" ? "Submit" : "ارسال"}</Button>
+                    <Button disabled={loading} type="submit" className={`${loading ? 'opacity-50' : ''} text-xl py-4 rounded-xl min-w-32 h-13 submit `}>{lang === "en" ? "Submit" : "አስገባ"}</Button>
                 </form>
             </Form>
         </motion.div>

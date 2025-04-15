@@ -18,8 +18,8 @@ export default function Contact() {
         <div className='book-main-page' id='contact' style={{ backgroundImage: `url(${img1.src})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>
             <div className="overlay">
                 <div className="container m-auto">
-                    <h2 className='h2-form-contact'>{lang === 'en' ? 'Let’s work together' : 'ابدا بالعمل معنا'}</h2>
-                    <p className='p-form-contact'>{lang == 'en' ? "Let's discuss how we can support your Travrls and ummrah services" : "ابدا بالنقاش كيف يمكننا مساعدة خدماتك في سفرك وعمره"}</p>
+                    <h2 className='h2-form-contact'>{lang === 'en' ? 'Let’s work together' : 'አብረን እንስራ'}</h2>
+                    <p className='p-form-contact'>{lang == 'en' ? "Let's discuss how we can support your Travrls and ummrah services" : "የጉዞ እና የዑምራ አገልግሎቶችን እንዴት መደገፍ እንደምንችል እንወያይ"}</p>
                     <div className="book-cont">
                         <MazarInfo></MazarInfo>
                         <FormPage lang={lang}></FormPage>

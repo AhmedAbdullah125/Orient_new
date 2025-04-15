@@ -20,13 +20,22 @@ export default function About() {
         { id: 3, cover: img3, title: 'Car Reservation', description: 'our company did more then 1000000 Umrah tranvel to makkah and madina using our company' },
         { id: 4, cover: img4, title: 'Plane Tickets', description: 'our company did more then 1000000 Umrah tranvel to makkah and madina using our company' },
     ]
+    const [lang, setLang] = useState('en');
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            // Define the headers with the selected language
+            setLang(localStorage.getItem('lang'));
+            const headers = {
+                lang: localStorage.getItem('lang'), // Change language dynamically based on state
+            };
+        }
+    }, []);
     return (
         <div className="about" >
             <div className="container m-auto" id='services'>
-                <h2>Our Services</h2>
-                <h3>We offer a wide range of services to meet your needs</h3>
+                <h2>{lang == 'en' ? 'Our Services' : 'አገልግሎቶች'}</h2>
+                <h3>{lang == 'en'?"We offer a wide range of services to meet your needs":"ፍላጎቶችዎን ለማሟላት ሰፋ ያሉ አገልግሎቶችን እናቀርባለን።"}</h3>
                 <div className="services-conr">
-
                     <Swiper
                         slidesPerView={3}
                         spaceBetween={32}
@@ -59,15 +68,8 @@ export default function About() {
 
                         {data.map((item, index) =>
                             <SwiperSlide key={index}>
-                                <motion.div
-                                    initial={{ y: 100, opacity: 0, }}
-                                    whileInView={{ y: 0, opacity: 1, }}
-                                    transition={{
-                                        type: 'spring',
-                                        bounce: 0.5,
-                                        duration: index * .5,
-                                    }}
-                                    viewport={{ once: true }}
+                                <Link
+                                    href={`/service?id=${item.id}`}
                                     className="option" key={index}
                                 >
                                     <div className="img-cont">
@@ -78,7 +80,7 @@ export default function About() {
                                         <p>{item.description}</p>
                                         <Link href={`/service?id=${item.id}`} className="btn"><span>Read More </span> <i className="fa-solid fa-chevron-right"></i></Link>
                                     </div>
-                                </motion.div>
+                                </Link>
                             </SwiperSlide>
                         )}
                     </Swiper>

@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import logo from '/public/images/logo.png';
+import global from '/public/global.svg';
 import bars from '/public/images/bars.png';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -43,6 +44,21 @@ export default function Header() {
     }
   }, [lastScrollY]);
 
+
+  let [lang, setLang] = useState('en');
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (localStorage.getItem('lang') === 'amh' || localStorage.getItem('lang') === 'en') {
+        setLang(localStorage.getItem('lang'));
+        // localStorage.setItem('lang', 'en');
+      }
+      else {
+        localStorage.setItem('lang', 'en');
+        setLang('en');
+      }
+    }
+  }, [lang]);
+
   return (
     <div className="head-all">
       <div
@@ -53,11 +69,29 @@ export default function Header() {
           pointerEvents: showNav ? 'auto' : 'none',
         }}
       >
-        <Link href="/" className="logo">
-          <Image src={logo} alt="orient" className="img-logo" />
-        </Link>
-        <div className="bars" onClick={openLinks}>
-          <Image src={bars} alt="orient" className="menu-bars" />
+        <div className="container m-auto">
+          <div className="l-side">
+            <Link href="/" className="logo">
+              <Image src={logo} alt="orient" className="img-logo" />
+            </Link>
+          </div>
+          <div className="r-side">
+            <div className="language" onClick={() => {
+              if (lang === 'en') {
+                localStorage.setItem('lang', 'amh');
+                setLang('amh');
+              } else {
+                localStorage.setItem('lang', 'en');
+                setLang('en');
+              }
+              window.location.reload(); // Reloads the page
+            }}>
+              <Image src={global} alt="orient" className="img-language" />
+            </div>
+            <div className="bars" onClick={openLinks}>
+              <Image src={bars} alt="orient" className="menu-bars" />
+            </div>
+          </div>
         </div>
       </div>
       <div className="herader-overly-content" style={{ transform: 'translateX(-100%)' }} onClick={openLinks}>

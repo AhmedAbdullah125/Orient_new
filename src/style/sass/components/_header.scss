@@ -15,21 +15,40 @@ body {
 .nav-section {
     position: fixed;
     top: 40px;
-    right: 10%;
-    max-width: 200px;
-    background-color: rgba(0, 0, 0, 0.75);
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: fit-content;
+    // right: 10%;
+    width: 100%;
     z-index: 100;
     transform-origin: top right;
 
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    .r-side {
+        background-color: rgba(0, 0, 0, 0.75);
+        padding: 20px 40px;
+        display: flex;
+        max-width: 200px;
+        align-items: center;
+        justify-content: space-between;
+        width: fit-content;
+
+    }
+
+    .l-side {
+        img {
+            width: 80px;
+            min-height: 100px;
+            object-fit: contain;
+        }
+    }
 
     img {
-        height: 45px;
-        width: 60px;
+        height: 35px;
+        width: 42px;
         object-fit: contain;
 
         &:hover {
@@ -69,12 +88,14 @@ body {
             color: $white;
             text-align: center;
             text-wrap: nowrap;
+
             &:hover {
                 color: $main;
             }
+
             @media screen and (max-width: 767px) {
                 font-size: 32px;
-                
+
             }
         }
     }
