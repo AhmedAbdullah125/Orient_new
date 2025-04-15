@@ -62,7 +62,7 @@ export default function Who() {
                         viewport={{ once: true }}
                         className="r-side">
                         <div className="img-cont">
-                            <div className="overlay"></div>
+                            {/* <div className="overlay"></div> */}
                             <Image src={logo} width={500} height={500} alt="Mazar" className="img-hero" />
                         </div>
                     </motion.div>

@@ -19,7 +19,12 @@
         }
 
         .text {
-            width: 50%;
+           display: flex;
+        //    align-items: center;
+           gap: 24px;
+           .det{
+            width: 100%;
+           }
 
             @include max-767 {
                 width: 100%;
@@ -43,12 +48,13 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 24px;
+                width: 100%;
                 @media screen and (max-width: 767px) {
                     grid-template-columns: repeat(1, 1fr);
                     
                 }
                 .counter{
-                    padding: 32px 8px;
+                    padding: 18px 8px;
                     border-radius: 12px;
                     &:hover{
                         background-color: $main;
@@ -73,6 +79,7 @@
                         color: #666666;
                         font-size: 16px;
                         font-weight: 500;
+                        margin-bottom: 0;
                     }
                 }
             }

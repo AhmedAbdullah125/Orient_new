@@ -41,7 +41,7 @@ export default function BlogsGrid() {
     ]
 
     return (
-        <div className="news mt-10 brief">
+        <div className="news brief">
             <div className="container m-auto">
                 <div className="latest">
                     <h2>Take a look on our Blogs</h2>

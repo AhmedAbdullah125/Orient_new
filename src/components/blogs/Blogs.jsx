@@ -18,9 +18,9 @@ export default function Advant() {
         }
     })
     return (
-        <>
+        <div className="blogs-main-page">
             <ServiceTop img={img1} title="Our Blogs" />
             <BloggGrid />
-        </>
+        </div>
     )
 }

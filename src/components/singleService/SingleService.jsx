@@ -66,18 +66,18 @@ export default function SingleService() {
     })
     const data = {
         id: 1,
-        name :"Umrah Travel",
-        description :"🌟 Discover Hassle-Free Ummrah Services with Orient 🌟 Embark on a spiritual journey with confidence and peace of mind through our tailored Ummrah packages. At [Your Travel Agency Name], we take pride in providing comprehensive services that cater to all your needs. From visa processing and flight bookings to luxurious accommodation and ground transportation, we ensure every detail is meticulously planned. Experience the convenience of guided tours, spiritual support, and 24/7 customer assistance as you focus on your prayers and spiritual growth. Let us be your trusted companion on this sacred journey, creating unforgettable memories with unmatched comfort and reliability. Contact us today to plan your Ummrah trip and experience excellence in every step! 🕋✈️",
+        name: "Umrah Travel",
+        description: "🌟 Discover Hassle-Free Ummrah Services with Orient 🌟 Embark on a spiritual journey with confidence and peace of mind through our tailored Ummrah packages. At [Your Travel Agency Name], we take pride in providing comprehensive services that cater to all your needs. From visa processing and flight bookings to luxurious accommodation and ground transportation, we ensure every detail is meticulously planned. Experience the convenience of guided tours, spiritual support, and 24/7 customer assistance as you focus on your prayers and spiritual growth. Let us be your trusted companion on this sacred journey, creating unforgettable memories with unmatched comfort and reliability. Contact us today to plan your Ummrah trip and experience excellence in every step! 🕋✈️",
         features: [
             { title: "Visa Processing", counter: "1000", description: "Visa processing and flight bookings" },
             { title: "Accommodation", counter: "500", description: "Luxurious accommodations and ground transportation" },
             { title: "Guided Tours", counter: "100", description: "Guided spiritual support and 24/7 customer assistance" },
         ],
-       cover : img1,
+        cover: img1,
         images: [
             img1, img3, img4, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19
         ]
-    }  
+    }
     const packages = [
         {
             title: 'Silver Ummrah Package',
@@ -109,8 +109,10 @@ export default function SingleService() {
                     <div className="container m-auto">
                         <div className="single-details">
                             <div className="text">
-                                <h2>{data?.name}</h2>
-                                <p>{data?.description}</p>
+                                <div className="det">
+                                    <h2>{data?.name}</h2>
+                                    <p>{data?.description}</p>
+                                </div>
                                 <div className="counters">
                                     {
                                         data.features.map((feature, index) =>
@@ -123,50 +125,47 @@ export default function SingleService() {
                                     }
                                 </div>
                             </div>
-                            <div className="img-cont">
-                                <Image src={data?.cover} alt="Alalaa" width={200} height={200} />
-                                {/* <Image src={img2} alt="Alalaa" width={200} height={200} /> */}
-                            </div>
+
                         </div>
                         <div className="packages">
-                        <Swiper
-                            modules={[Pagination, Autoplay]}
-                            spaceBetween={20}
-                            slidesPerView={3}
-                            pagination={{ clickable: true }}
-                            autoplay={{ delay: 3000 }}
-                            className='swiperPackages'
-                            breakpoints={{
-                                0: {
-                                    slidesPerView: 1,
-                                },
-                                768: {
-                                    slidesPerView: 2,
-                                },
-                                1024: {
-                                    slidesPerView: 3,
-                                },
-                            }}
-                        >
-                            {packages.map((pkg, index) => (
-                                <SwiperSlide key={index}>
-                                    <Link href="contact?service=Ummrah" className="package-card">
-                                        <h4>{pkg.title}</h4>
-                                        <div className="price-section">
-                                            <p className="new-price" style={{ fontWeight: 'bold', color: '#2e8b57' }}>
-                                                {pkg.newPrice}
-                                            </p>
-                                            <p className="old-price" style={{ textDecoration: 'line-through', color: '#999' }}>
-                                                {pkg.oldPrice}
-                                            </p>
-                                        </div>
-                                        <span className="offer">{pkg.offer}</span>
-                                        <p className="details">{pkg.details}</p>
-                                    </Link>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    </div>
+                            <Swiper
+                                modules={[Pagination, Autoplay]}
+                                spaceBetween={20}
+                                slidesPerView={3}
+                                pagination={{ clickable: true }}
+                                autoplay={{ delay: 3000 }}
+                                className='swiperPackages'
+                                breakpoints={{
+                                    0: {
+                                        slidesPerView: 1,
+                                    },
+                                    768: {
+                                        slidesPerView: 2,
+                                    },
+                                    1024: {
+                                        slidesPerView: 3,
+                                    },
+                                }}
+                            >
+                                {packages.map((pkg, index) => (
+                                    <SwiperSlide key={index}>
+                                        <Link href="contact?service=Ummrah" className="package-card">
+                                            <h4>{pkg.title}</h4>
+                                            <div className="price-section">
+                                                <p className="new-price" style={{ fontWeight: 'bold', color: '#2e8b57' }}>
+                                                    {pkg.newPrice}
+                                                </p>
+                                                <p className="old-price" style={{ textDecoration: 'line-through', color: '#999' }}>
+                                                    {pkg.oldPrice}
+                                                </p>
+                                            </div>
+                                            <span className="offer">{pkg.offer}</span>
+                                            <p className="details">{pkg.details}</p>
+                                        </Link>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </div>
                         <div className="gallery">
                             <h3>Gallery</h3>
                             <div className="columns-2 gap-4 sm:columns-5">
