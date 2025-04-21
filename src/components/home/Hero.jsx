@@ -9,13 +9,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Link from 'next/link';
 export default function Hero() {
     const [muted, setMuted] = useState(true);
     const [loading, setLoading] = useState(true); // State for loading indicator
     const [data, setData] = useState(null);
-    const [contactData, setContactData] = useState(null);
-    const [error, setError] = useState(null);
     const [lang, setLang] = useState('en');
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -37,7 +34,6 @@ export default function Hero() {
             setLoading(false);  // Set loading to false
         })
             .catch(error => {
-                setError(error);  // Handle any errors
                 console.error('Error fetching data:', error);
                 setLoading(false)
             });
@@ -52,8 +48,8 @@ export default function Hero() {
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={0}
-                        autoplay={true}
-                        loop={true}
+                        autoplay={false}
+                        loop={false}
                         modules={[Autoplay, Navigation, Pagination]}
                         breakpoints={{
                             1400: {
