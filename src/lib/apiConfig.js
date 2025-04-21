@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://app.alalaa.co/api';
+const API_BASE_URL = 'https://app.orient-grp.com/api';
 
 const API_ENDPOINTS = {
   REGISTER: '/auth/register',

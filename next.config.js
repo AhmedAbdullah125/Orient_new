@@ -1,6 +1,6 @@
 // next.config.js
 module.exports = {
     images: {
-      domains: ['alaa.irfaad.com','app.mzarapp.com','app.alalaa.co'], // Add your external domain here
+      domains: ['app.mzarapp.com','app.orient-grp.com'], // Add your external domain here
     },
   };

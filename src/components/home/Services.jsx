@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import img1 from '/public/images/detservices/2.jpg'
 import img2 from '/public/images/hotels/1.jpg'
 import img3 from '/public/images/detservices/14.jpg'
@@ -12,7 +11,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from 'next/link';
-import img from '/public/alalaa.jpg'
 export default function About() {
     const data = [
         { id: 1, cover: img1, title: 'Umrah services', description: 'our company did more then 1000000 Umrah tranvel to makkah and madina using our company' },

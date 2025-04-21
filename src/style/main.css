@@ -686,6 +686,17 @@ body {
   height: 100vh;
   position: relative;
 }
+@media screen and (max-width: 767px) {
+  .hero {
+    height: 60vh;
+  }
+}
+.hero .swiper {
+  height: 100%;
+}
+.hero .swiper-slide {
+  height: auto;
+}
 .hero .mute-icon {
   position: absolute;
   top: 20px;
@@ -707,28 +718,30 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.hero .hero-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .hero .overlay {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
 }
-.hero .overlay .swiper {
-  width: 100%;
-  height: 100%;
-}
-.hero .overlay .swiper-slide {
+.hero .overlay .container {
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
-  width: 100%;
+  flex-direction: column;
   height: 100%;
 }
 .hero .overlay .heading {
   width: 100%;
+  height: 100%;
   max-width: 900px;
   display: flex;
   flex-direction: column;
@@ -740,13 +753,13 @@ body {
 }
 .hero .overlay .heading h1 {
   color: #F7F7F7;
-  font-size: 32px;
+  font-size: 56px;
   font-weight: 700;
   margin-bottom: 0;
 }
 @media screen and (max-width: 767px) {
   .hero .overlay .heading h1 {
-    font-size: 20px;
+    font-size: 32px;
   }
 }
 .hero .overlay .heading p {
