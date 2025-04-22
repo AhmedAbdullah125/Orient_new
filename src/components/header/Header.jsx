@@ -48,7 +48,7 @@ export default function Header() {
   let [lang, setLang] = useState('en');
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      if (localStorage.getItem('lang') === 'amh' || localStorage.getItem('lang') === 'en') {
+      if (localStorage.getItem('lang') === 'am' || localStorage.getItem('lang') === 'en') {
         setLang(localStorage.getItem('lang'));
         // localStorage.setItem('lang', 'en');
       }
@@ -78,8 +78,8 @@ export default function Header() {
           <div className="r-side">
             <div className="language" onClick={() => {
               if (lang === 'en') {
-                localStorage.setItem('lang', 'amh');
-                setLang('amh');
+                localStorage.setItem('lang', 'am');
+                setLang('am');
               } else {
                 localStorage.setItem('lang', 'en');
                 setLang('en');

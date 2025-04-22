@@ -2624,6 +2624,11 @@ body {
   margin-bottom: 24px;
   text-align: start;
   height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .services-conr .option .text a {
   font-size: 16px;

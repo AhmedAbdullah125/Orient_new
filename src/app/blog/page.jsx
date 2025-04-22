@@ -19,7 +19,7 @@ export default function Advant() {
     const [lang, setLang] = useState('en')
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            if (localStorage.getItem('lang') === 'amh' || localStorage.getItem('lang') === 'en') {
+            if (localStorage.getItem('lang') === 'am' || localStorage.getItem('lang') === 'en') {
                 setLang(localStorage.getItem('lang'));
             }
             else {
