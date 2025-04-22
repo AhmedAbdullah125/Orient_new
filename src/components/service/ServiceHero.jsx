@@ -3,14 +3,15 @@ import React from 'react'; // Importing React to use JSX syntax and create compo
 import img1 from '/public/images/detservices/2.jpg'
 
 
-export default function ServiceHero() { // Defining the main functional component named 'Footer'.
+export default function ServiceHero({data}) { // Defining the main functional component named 'Footer'.
+console.log(data);
 
     return (
-        <section className="ServiceHero" style={{ backgroundImage: `url(${img1.src})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>
+        <section className="ServiceHero" style={{ backgroundImage: `url(${data.cover})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>
             <div className="overlay">
                 <div className="container">
                     <div className="details">
-                        <h2>Umrah Travel</h2>
+                        <h2>{data.title}</h2>
                     </div>
                 </div>
             </div>

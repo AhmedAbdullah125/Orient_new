@@ -48,7 +48,9 @@ export default function Hero() {
                         slidesPerView={1}
                         spaceBetween={0}
                         autoplay={false}
-                        loop={false}
+                        navigation={true}
+                        pagination={true}
+                        loop={true}
                         modules={[Autoplay, Navigation, Pagination]}
                         breakpoints={{
                             1400: {

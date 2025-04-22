@@ -18,7 +18,7 @@ export default function FormPage({ lang }) {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const sendPostRequest = async (data) => {
-        const url = `${API_BASE_URL}/landing/contact-us`;
+        const url = `${API_BASE_URL}/landing/home/contact-us`;
         const queryParams = {
             customer_name: data?.name,
             customer_mobile: data?.phone,
@@ -45,7 +45,6 @@ export default function FormPage({ lang }) {
                 });
                 // Redirect or perform additional actions
                 form.reset(); // Reset form fields
-                router.push('/');
             } else {
                 // Handle unexpected responses
                 toast(errorMessage, {
@@ -80,13 +79,13 @@ export default function FormPage({ lang }) {
         },
     });
     const Submit = (data) => {
-        // sendPostRequest(data);
-        toast('Sent successful', {
-            style: {
-                borderColor: "#28a745",
-                boxShadow: '0px 0px 10px rgba(40, 167, 69, .5)'
-            },
-        })
+        sendPostRequest(data);
+        // toast('Sent successful', {
+        //     style: {
+        //         borderColor: "#28a745",
+        //         boxShadow: '0px 0px 10px rgba(40, 167, 69, .5)'
+        //     },
+        // })
 
     };
     return (

@@ -1,31 +1,14 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import logo from '/public/images/logoBlack.png';
 import { motion } from 'framer-motion';
 import NumberTicker from '../ui/number-ticker';
-import part1 from '/public/images/partner/eg.png';
-import part2 from '/public/images/partner/nas.png';
-import part3 from '/public/images/partner/partner2.png';
-import part4 from '/public/images/partner/partnr1.png';
-import part5 from '/public/images/partner/sau.png';
 import Marquee from '../ui/marquee';
 import { cn } from '@/lib/utils';
 import axios from 'axios';
 import { API_BASE_URL } from '@/lib/apiConfig';
 import Loading from '@/app/loading';
 
-const ReviewCard = ({
-    img,
-}) => {
-    return (
-        <figure className={cn()}>
-            <div className="part-cont" >
-                <Image src={img} alt="Mazar" width={200} height={200} />
-            </div>
-        </figure>
-    );
-};
 
 export default function Who() {
     const [lang, setLang] = useState('en');
