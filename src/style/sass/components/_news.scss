@@ -52,6 +52,11 @@
                         font-weight: 700;
                         color: #535251;
                         margin-bottom: 0;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;       /* 💡 Max 3 lines */
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
 
                     .arrow {

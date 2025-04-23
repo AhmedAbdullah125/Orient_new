@@ -5,13 +5,13 @@ export default function ServiceTop({ img, title }) { // Defining the main functi
 
     return (
         <section className="single-page">
-            <div className="container m-auto">
-                <div className="banner">
-                    <div className="overlay">
+            <div className="overlay">
+                <div className="container m-auto">
+                    <div className="banner">
                         <p className="p-on-overlay">{title}</p>
-                    </div>
-                    <div className="haram-slider slider-content">
-                        <Image src={img} alt="Haram" data-aos="zoom-in" />
+                        <div className="haram-slider slider-content">
+                            <Image src={img} alt="Haram" data-aos="zoom-in" width={1000} height={1000} />
+                        </div>
                     </div>
                 </div>
             </div>

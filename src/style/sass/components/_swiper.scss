@@ -107,31 +107,21 @@
   }
   
   .p-on-overlay {
-    color: $black;
+    color: $white;
     font-size: 56px;
     font-weight: 500;
     // font-family: yesteryear !important;
+    @media screen and (max-width: 991px) {
+        font-size: 40px;
+    }
+
+    @media screen and (max-width: 440px) {
+        font-size: 32px;
+    }
   }
 
   
-  @media (max-width: 767px) {
-    .banner .p-on-overlay {
-      font-size: 50px;
-    }
-  }
-  
-  
-  @media (max-width: 991px) {
-    .p-on-overlay {
-      font-size: 40px;
-    }
-  }
-  @media (max-width: 440px) {
-    .banner .p-on-overlay {
-      font-size: 30px;
-    }
-  }
-  
+
   
   .swiper-pagination-bullet {
     width: 32px;
