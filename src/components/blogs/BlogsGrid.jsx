@@ -1,46 +1,11 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import img1 from '/public/images/detservices/25.jpg'
-import img2 from '/public/images/detservices/26.png'
-import img3 from '/public/images/detservices/27.jpg'
 import axios from 'axios'
 import { API_BASE_URL } from '@/lib/apiConfig'
 import Loading from '@/app/loading'
 
 export default function BlogsGrid() {
-    let blogs = [
-        {
-            img: img1,
-            title: 'Flight - Science World - moahmed Ali ',
-            content: 'To design a successful airplane, engineers had to master the balance and control of four forces: lift, gravity, thrust and drag, also known as the "four forces'
-        },
-        {
-            img: img2,
-            title: 'Science of the Total Environment',
-            content: 'Science of the Total Environment is a weekly international peer-reviewed scientific journal covering environmental science. It was established in 1972 and'
-        },
-        {
-            img: img3,
-            title: 'Science of the Total Environment',
-            content: 'Science of the Total Environment is a weekly international peer-reviewed scientific journal covering environmental science. It was established in 1972 and'
-        },
-        {
-            img: img1,
-            title: 'Flight - Science World - moahmed Ali',
-            content: 'To design a successful airplane, engineers had to master the balance and control of four forces: lift, gravity, thrust and drag, also known as the "four forces'
-        },
-        {
-            img: img2,
-            title: 'Science of the Total Environment',
-            content: 'Science of the Total Environment is a weekly international peer-reviewed scientific journal covering environmental science. It was established in 1972 and'
-        },
-        {
-            img: img3,
-            title: 'Science of the Total Environment',
-            content: 'Science of the Total Environment is a weekly international peer-reviewed scientific journal covering environmental science. It was established in 1972 and'
-        },
-    ]
 
     const [loading, setLoading] = useState(true); // State for loading indicator
     const [data, setData] = useState(null);

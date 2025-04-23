@@ -1,6 +1,4 @@
-import Image from 'next/image';
 import React from 'react'; // Importing React to use JSX syntax and create components.
-import img1 from '/public/images/detservices/2.jpg'
 
 
 export default function ServiceHero({data}) { // Defining the main functional component named 'Footer'.
