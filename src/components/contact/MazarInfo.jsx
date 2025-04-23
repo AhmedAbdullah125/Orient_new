@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import logo from '/public/images/logo.png';
 import Image from 'next/image';
 import { motion } from 'framer-motion'; // Importing the motion component from Framer Motion for animations

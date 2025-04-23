@@ -8,11 +8,6 @@ import img4 from '/public/images/detservices/30.jpg'
 import img5 from '/public/images/detservices/31.jpg'
 import img6 from '/public/images/detservices/32.jpg'
 
-
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Autoplay } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
 import ServiceTop from '@/components/service/ServiceTop'
 
 export default function Advant() {
@@ -28,29 +23,6 @@ export default function Advant() {
             }
         }
     })
-
-    const slides = [
-        {
-            icon: 'fa-person-walking-luggage',
-            title: 'Choose Destination',
-            desc: 'Orient will help you easily choose your destination. Quickly go and find out your next destination.',
-        },
-        {
-            icon: 'fa-sliders',
-            title: 'Diversity',
-            desc: "See what's available at your next trip. If you're looking to travel, enter your data to check available directions.",
-        },
-        {
-            icon: 'fa-meteor',
-            title: 'Flexibility',
-            desc: "In today's fast world, speed is essential—from adapting to change to seizing new opportunities.",
-        },
-        {
-            icon: 'fa-money-bill-transfer',
-            title: 'Good Prices',
-            desc: 'Opportunities are rare. When they come, seize the moment and don’t waste the chance.',
-        },
-    ]
 
     return (
         <>

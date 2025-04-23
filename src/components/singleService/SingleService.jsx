@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import Loading from '@/app/loading';
 import Image from 'next/image';
 import NumberTicker from '../ui/number-ticker';
 import { Fancybox } from "@fancyapps/ui";
